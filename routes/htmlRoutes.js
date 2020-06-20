@@ -12,6 +12,12 @@ module.exports = function(app) {
         
         ../public/NAME_OF_FILE
     */
+
+    // default page
+    app.get("/", function(req, res) {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });
+
     // notes page
     app.get("/notes", function (req, res) {
         res.sendFile(path.join(__dirname, "../public/notes.html"));
